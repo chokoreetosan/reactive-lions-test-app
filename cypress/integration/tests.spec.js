@@ -10,6 +10,15 @@ describe("Loads the App",()=>{
     })
 })
 
-describe("App has correct components",()=>{
+describe("App should have PosterContainer",()=>{
+    it('PosterContainer should exist', ()=>{
+      expect(cy.get('[id=container]')).to.exist;
+    })
+
+})
+describe("App should have NavBar",()=>{
+    it('NavBar should exist',()=>{
+        expect(cy.get(['id=navbar'])).to.exist;
+    })
     
 })
