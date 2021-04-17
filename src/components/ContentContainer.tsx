@@ -14,7 +14,7 @@ width:60vw;
 
 const ContentContainer = () => {
 
-    return <Container>
+    return <Container id={'contentcontainer'}>
         <SideNavBar/>
         <PosterContainer />
         <MovieData />

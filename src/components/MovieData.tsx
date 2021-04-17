@@ -8,7 +8,7 @@ background:blue;
 `;
 
 const MovieData = () => {
-    return <Data>
+    return <Data id={'moviedata'}>
 asdf    
     </Data>
 }
