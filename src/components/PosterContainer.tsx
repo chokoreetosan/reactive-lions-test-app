@@ -1,6 +1,10 @@
 import * as React from 'react';
-import query from '../query'
 import {useStaticQuery, graphql} from 'gatsby'
+import styled from 'styled-components'
+const Container = styled.div`
+
+`;
+
 const PosterContainer = () => {
     const data = useStaticQuery(graphql`query MyQuery($formatString: String = "") {
         allMoviesCsv {
@@ -20,7 +24,7 @@ const PosterContainer = () => {
       `)
     console.log(data)
 
-    return (<div></div>)
+    return (<Container id={'postercontainer'}></Container>)
 }
 
 export default PosterContainer
