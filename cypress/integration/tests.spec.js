@@ -28,3 +28,14 @@ describe('App should have a SideNavBar',()=>{
         expect(cy.get('[id=sidenavbar]')).to.exist;
     })
 })
+
+describe('App should have a Content Container component',()=>{
+    it('Container for SideNavBar, PosterContainer, and MovieData should exist', ()=>{
+        expect(cy.get('[id=contentcontainer]')).to.exist;
+    })
+})
+describe('App should have a MovieData component',()=>{
+    it('MovieData component should exist' ,()=>{
+        expect(cy.get('[id=moviedata]')).to.exist;
+    })
+})
