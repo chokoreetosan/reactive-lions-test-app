@@ -12,7 +12,7 @@ describe("Loads the App",()=>{
 
 describe("App should have PosterContainer",()=>{
     it('PosterContainer should exist', ()=>{
-      expect(cy.get('[id=container]')).to.exist;
+      expect(cy.get('[id=postercontainer]')).to.exist;
     })
 
 })
@@ -20,5 +20,11 @@ describe("App should have NavBar",()=>{
     it('NavBar should exist',()=>{
         expect(cy.get(['id=navbar'])).to.exist;
     })
-    
+
+})
+
+describe('App should have a SideNavBar',()=>{
+    it('SideNavBar should exist',()=>{
+        expect(cy.get('[id=sidenavbar]')).to.exist;
+    })
 })
