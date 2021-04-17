@@ -18,9 +18,12 @@ interface LayoutProps {
 }
 
 const App = styled.div`
-  width:60%;
-  height:80%;
-  background-color:white;
+  width:60vw;
+  height:80vh;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  position:fixed;
 `;
 
 const Layout = ({ children }:LayoutProps) => {

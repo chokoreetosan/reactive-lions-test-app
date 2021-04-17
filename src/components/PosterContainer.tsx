@@ -2,7 +2,9 @@ import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby'
 import styled from 'styled-components'
 const Container = styled.div`
-
+width:40vw;
+height:100%;
+background:red;
 `;
 
 const PosterContainer = () => {
@@ -24,7 +26,7 @@ const PosterContainer = () => {
       `)
     console.log(data)
 
-    return (<Container id={'postercontainer'}></Container>)
+    return (<Container id={'postercontainer'}>asdf</Container>)
 }
 
 export default PosterContainer
