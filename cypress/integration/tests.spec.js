@@ -39,3 +39,10 @@ describe('App should have a MovieData component',()=>{
         expect(cy.get('[id=moviedata]')).to.exist;
     })
 })
+
+describe("App should be rendering some posters",()=>{
+    it("App renders at least one poster",()=>{
+        console.log(cy.get('.posters'));
+        expect(cy.get('.posters')).to.exist;
+    })
+})
