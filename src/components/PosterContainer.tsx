@@ -19,12 +19,12 @@ const TitleAndSortBox = styled.div`
 `
 
 interface PosterContainerProps {
-  setCurrentlyShown(): () => void
+  setCurrentlyShown: (data:movieData) => void
   pointerFunctions: {
-    setPointerX: () => {}
-    setPointerY: () => {}
-    setHoverVisible: () => {}
-    setReasonForReccomendation: (reason: string) => {}
+    setPointerX: (x:number) => void
+    setPointerY: (y:number) => void
+    setHoverVisible: (bool:boolean) => void
+    setReasonForReccomendation: (reason: string) => void
   }
 }
 
@@ -73,12 +73,12 @@ const PosterContainer = ({
    */
   let movies
   movies = data.allMoviesCsv.nodes
-  let movieImages = data.allImageSharp.edges.reduce((acc, cur, ind) => {
+  let movieImages = data.allImageSharp.edges.reduce((acc:any, cur:any, ind:any) => {
     acc[cur["node"]["fluid"]["originalName"]] =
       cur["node"]["fluid"]["originalImg"]
     return acc
   }, {})
-  movies = movies.map(movie => {
+  movies = movies.map((movie:movieData) => {
     movie.imageURL = movieImages[movie["Poster"]]
     return movie
   })
@@ -88,10 +88,10 @@ const PosterContainer = ({
   /**
    * Creates the Posters with the map function.
    */
-  const posters = posterData.map((movie, ind) => {
+  const posters = posterData.map((movie:movieData, ind:number) => {
     return (
       <Poster
-        key={ind}
+        key={ind.toString()}
         movieData={movie}
         setCurrentlyShown={setCurrentlyShown}
         pointerFunctions={pointerFunctions}

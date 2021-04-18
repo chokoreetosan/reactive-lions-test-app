@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+//@ts-expect-error
 import icon from "../images/gatsby-icon.png"
 const Bar = styled.div`
   margin: 0 auto;

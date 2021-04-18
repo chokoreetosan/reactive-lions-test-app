@@ -17,13 +17,13 @@ interface movieData {
 
 interface PosterProps {
   movieData: movieData
-  setCurrentlyShown(movieData: movieData): () => void
+  setCurrentlyShown: (data:movieData) => void
   key: string
   pointerFunctions: {
-    setPointerX: (x: number) => {}
-    setPointerY: (y: number) => {}
-    setHoverVisible: (isVisible: boolean) => {}
-    setReasonForReccomendation: (reason: string) => {}
+    setPointerX: (x: number) => void
+    setPointerY: (y: number) => void
+    setHoverVisible: (isVisible: boolean) => void
+    setReasonForReccomendation: (reason: string) => void
   }
 }
 

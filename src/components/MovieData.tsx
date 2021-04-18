@@ -22,7 +22,7 @@ interface movieData {
   imageURL: string
 }
 interface MovieDataProps {
-  currentlyShown: movieData
+  currentlyShown: movieData|undefined
 }
 
 const GraphicsBox = styled.div`
@@ -56,7 +56,7 @@ const Title = styled.div`
   font-weight: bold;
   margin-top: 10px;
   width: 14vw;
-  height: 3vh;
+  height: auto;
   left: 0;
 `
 const Genres = styled.div`
@@ -209,12 +209,12 @@ const MovieData = ({ currentlyShown }: MovieDataProps) => {
   return (
     <Data id={"moviedata"}>
       <GraphicsBox>
-        <ThumbNail src={currentlyShown.imageURL} />
-        <Poster src={currentlyShown.imageURL} />
+        <ThumbNail src={currentlyShown?.imageURL} />
+        <Poster src={currentlyShown?.imageURL} />
       </GraphicsBox>
 
-      <Title>{currentlyShown.Title}</Title>
-      <Genres>{currentlyShown.Genres}</Genres>
+      <Title>{currentlyShown?.Title}</Title>
+      <Genres>{currentlyShown?.Genres}</Genres>
       <ButtonContainer>
         <WatchButton>{String.fromCodePoint(0x23f5)}Watch</WatchButton>
         <AddButton>Add to library</AddButton>
@@ -226,25 +226,25 @@ const MovieData = ({ currentlyShown }: MovieDataProps) => {
             <span style={{ color: "#ffae42" }}>
               {String.fromCodePoint(0x2605)}
             </span>{" "}
-            {currentlyShown.IMDB_Rating}
+            {currentlyShown?.IMDB_Rating}
           </Rating>
         </RatingBox>
         <YearBox>
           <RatingAndYearTitle>Year</RatingAndYearTitle>
-          <Year>{currentlyShown.Year}</Year>
+          <Year>{currentlyShown?.Year}</Year>
         </YearBox>
       </RatingAndYear>
       <DirectorBox>
         <DirectorTitle>Director</DirectorTitle>
-        <DirectorName>{currentlyShown.Director}</DirectorName>
+        <DirectorName>{currentlyShown?.Director}</DirectorName>
       </DirectorBox>
       <SummaryBox>
         <SummaryTitle>Summary</SummaryTitle>
-        <SummaryText>{currentlyShown.Summary}</SummaryText>
+        <SummaryText>{currentlyShown?.Summary}</SummaryText>
       </SummaryBox>
       <LeadActorsBox>
         <LeadActorsTitle>Lead Actors</LeadActorsTitle>
-        <LeadActorsText>{currentlyShown.Lead_Actors}</LeadActorsText>
+        <LeadActorsText>{currentlyShown?.Lead_Actors}</LeadActorsText>
       </LeadActorsBox>
     </Data>
   )

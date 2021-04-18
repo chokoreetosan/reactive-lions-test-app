@@ -7,8 +7,6 @@
 
 import * as React from "react"
 import { ReactNode, useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
 import NavBar from "./NavBar"
 import styled from "styled-components"
 import ContentContainer from "./ContentContainer"
@@ -41,10 +39,10 @@ const Layout = ({ children }: LayoutProps) => {
   /** 
    * The state variables that control the hover effect.
    * **/
-  const [pointerX, setPointerX] = useState()
-  const [pointerY, setPointerY] = useState()
-  const [hoverIsVisible, setHoverVisible] = useState(false)
-  const [reasonForReccomendation, setReasonForReccomendation] = useState("")
+  const [pointerX, setPointerX] = useState<number>()
+  const [pointerY, setPointerY] = useState<number>()
+  const [hoverIsVisible, setHoverVisible] = useState<boolean>(false)
+  const [reasonForReccomendation, setReasonForReccomendation] = useState<string>("")
 
 
   /**
@@ -52,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
    * Callback that is bound to the mousemove event, and keeps track of the cursor location.
    * 
    */
-  const updateMouseLocation = e => {
+  const updateMouseLocation = (e:MouseEvent) => {
     setPointerX(e.clientX)
     setPointerY(e.clientY)
   }
