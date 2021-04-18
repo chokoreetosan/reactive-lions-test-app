@@ -13,12 +13,21 @@ height:70vh;
 width:60vw;
 `;
 
-const ContentContainer = () => {
+interface  ContentContainerTypes {
+    pointerFunctions: {
+        setPointerX: ()=>{}
+        setPointerY: ()=>{},
+        setHoverVisible: ()=>{}
+
+    }
+}
+
+const ContentContainer = ({pointerFunctions}:ContentContainerTypes) => {
     const [currentlyShown,setCurrentlyShown] = useState({});
 
     return <Container id={'contentcontainer'}>
         <SideNavBar/>
-        <PosterContainer setCurrentlyShown={setCurrentlyShown} />
+        <PosterContainer setCurrentlyShown={setCurrentlyShown} pointerFunctions={pointerFunctions}/>
         <MovieData currentlyShown={currentlyShown}/>
         </Container>
 }
