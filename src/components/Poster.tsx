@@ -1,8 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components'
 
-interface PosterProps {
-    movieData: {
+interface movieData{
         Director:string,
         Genres:string,
         IMDB_Rating:string,
@@ -11,9 +10,14 @@ interface PosterProps {
         Summary:string,
         Title:string,
         Year:string,
-        id:string
-    }
-    image:string
+        id:string,
+        imageURL:string
+}
+
+interface PosterProps {
+    movieData:movieData
+    setCurrentlyShown(movieData:movieData):()=>void,
+    key:string
 }
 
 const Image = styled.img`
@@ -23,10 +27,24 @@ border-radius:5px;
 border:3px solid #A742EB;
 `;
 
-const Poster = ({movieData, image}:PosterProps) => {
-    console.log(movieData, image)
-    return <Image src={image} />
+const Poster = ({key,movieData,setCurrentlyShown}:PosterProps) => {
+
+
+    console.log(movieData)
+    return <div onClick={()=>{
+        console.log('poster clicked')
+        setCurrentlyShown(movieData)
+    }}>
+    <Image id={key} className={'posters'} src={movieData.imageURL} 
     
+    // onMouseEnter={()=>{
+
+    // }}
+    // onMouseLeave={()=>{
+
+    // }}
+    />
+   </div> 
 }
 
 export default Poster
