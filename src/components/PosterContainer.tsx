@@ -19,19 +19,19 @@ const TitleAndSortBox = styled.div`
 `
 
 interface PosterContainerProps {
-  setCurrentlyShown: (data:movieData) => void
+  setCurrentlyShown: (data: movieData) => void
   pointerFunctions: {
-    setPointerX: (x:number) => void
-    setPointerY: (y:number) => void
-    setHoverVisible: (bool:boolean) => void
+    setPointerX: (x: number) => void
+    setPointerY: (y: number) => void
+    setHoverVisible: (bool: boolean) => void
     setReasonForReccomendation: (reason: string) => void
   }
 }
 
 /**
- * 
+ *
  * This component holds all the Movie Posters. It utilizes CSS grid to arrange them.
- * 
+ *
  */
 
 const PosterContainer = ({
@@ -73,12 +73,15 @@ const PosterContainer = ({
    */
   let movies
   movies = data.allMoviesCsv.nodes
-  let movieImages = data.allImageSharp.edges.reduce((acc:any, cur:any, ind:any) => {
-    acc[cur["node"]["fluid"]["originalName"]] =
-      cur["node"]["fluid"]["originalImg"]
-    return acc
-  }, {})
-  movies = movies.map((movie:movieData) => {
+  let movieImages = data.allImageSharp.edges.reduce(
+    (acc: any, cur: any, ind: any) => {
+      acc[cur["node"]["fluid"]["originalName"]] =
+        cur["node"]["fluid"]["originalImg"]
+      return acc
+    },
+    {}
+  )
+  movies = movies.map((movie: movieData) => {
     movie.imageURL = movieImages[movie["Poster"]]
     return movie
   })
@@ -88,7 +91,7 @@ const PosterContainer = ({
   /**
    * Creates the Posters with the map function.
    */
-  const posters = posterData.map((movie:movieData, ind:number) => {
+  const posters = posterData.map((movie: movieData, ind: number) => {
     return (
       <Poster
         key={ind.toString()}

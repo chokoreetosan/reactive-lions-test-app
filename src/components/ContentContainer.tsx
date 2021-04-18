@@ -15,9 +15,9 @@ const Container = styled.div`
 
 interface ContentContainerTypes {
   pointerFunctions: {
-    setPointerX: (x:number) => void
-    setPointerY: (y:number) => void
-    setHoverVisible: (bool:boolean) => void
+    setPointerX: (x: number) => void
+    setPointerY: (y: number) => void
+    setHoverVisible: (bool: boolean) => void
     setReasonForReccomendation: (reason: string) => void
   }
 }
@@ -30,7 +30,7 @@ and also the Navigation Bar to the right that will eventually allow the user to 
 */
 
 const ContentContainer = ({ pointerFunctions }: ContentContainerTypes) => {
-  const [currentlyShown, setCurrentlyShown] = useState<movieData|undefined>()
+  const [currentlyShown, setCurrentlyShown] = useState<movieData | undefined>()
 
   return (
     <Container id={"contentcontainer"}>

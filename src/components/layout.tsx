@@ -34,23 +34,23 @@ const HoverDiv = styled.div`
 `
 
 const Layout = ({ children }: LayoutProps) => {
-
-
-  /** 
+  /**
    * The state variables that control the hover effect.
    * **/
   const [pointerX, setPointerX] = useState<number>()
   const [pointerY, setPointerY] = useState<number>()
   const [hoverIsVisible, setHoverVisible] = useState<boolean>(false)
-  const [reasonForReccomendation, setReasonForReccomendation] = useState<string>("")
-
+  const [
+    reasonForReccomendation,
+    setReasonForReccomendation,
+  ] = useState<string>("")
 
   /**
-   * 
+   *
    * Callback that is bound to the mousemove event, and keeps track of the cursor location.
-   * 
+   *
    */
-  const updateMouseLocation = (e:MouseEvent) => {
+  const updateMouseLocation = (e: MouseEvent) => {
     setPointerX(e.clientX)
     setPointerY(e.clientY)
   }
@@ -68,7 +68,7 @@ const Layout = ({ children }: LayoutProps) => {
         }}
       />
 
-        {/**
+      {/**
         This is the component that follows the cursor when the user mouses over a poster.
         The Tween object is the interpolator that smoothly transitions cursor locations
         whenever the updateMouseLocation function is called, 
@@ -89,10 +89,6 @@ const Layout = ({ children }: LayoutProps) => {
         ) : (
           <></>
         )}
-
-
-
-
       </Tween>
     </App>
   )

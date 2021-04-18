@@ -17,7 +17,7 @@ interface movieData {
 
 interface PosterProps {
   movieData: movieData
-  setCurrentlyShown: (data:movieData) => void
+  setCurrentlyShown: (data: movieData) => void
   key: string
   pointerFunctions: {
     setPointerX: (x: number) => void
@@ -35,7 +35,7 @@ const Image = styled.img`
 `
 
 /**
-* This component contains a single Movie Poster, which, when clicked, propogates new data to the MovieData component.
+ * This component contains a single Movie Poster, which, when clicked, propogates new data to the MovieData component.
  */
 
 const Poster = ({

@@ -22,7 +22,7 @@ interface movieData {
   imageURL: string
 }
 interface MovieDataProps {
-  currentlyShown: movieData|undefined
+  currentlyShown: movieData | undefined
 }
 
 const GraphicsBox = styled.div`
@@ -200,7 +200,7 @@ const LeadActorsText = styled.div`
 `
 
 /**
- * 
+ *
  * This component diplays all the data about the movie after the corresponding poster has been clicked in the PosterContainer component.
  * It needs some work on responsiveness.
  */

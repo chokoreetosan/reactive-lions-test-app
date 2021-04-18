@@ -4,9 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import PosterContainer from "../components/PosterContainer"
 import Layout from "../components/layout"
 
-const IndexPage = () => (
-  <Layout>
-  </Layout>
-)
+const IndexPage = () => <Layout></Layout>
 
 export default IndexPage

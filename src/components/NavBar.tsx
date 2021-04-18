@@ -28,10 +28,10 @@ const StyledButton = styled.button`
 interface NavBarProps {}
 
 /**
- * 
- * Navigation buttons do nothing yet. In the future, they will allow the user to switch component views between the player, the library, and other options. 
- * 
- *  
+ *
+ * Navigation buttons do nothing yet. In the future, they will allow the user to switch component views between the player, the library, and other options.
+ *
+ *
  */
 
 const NavBar = ({}: NavBarProps) => (

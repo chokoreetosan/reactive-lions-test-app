@@ -24,7 +24,7 @@ const StyledButton = styled.button`
 `
 
 /**
- * 
+ *
  * This component will allow users to switch between different content displays, which will be rendered in the PosterContainer component.
  * It does nothing right now.
  */
