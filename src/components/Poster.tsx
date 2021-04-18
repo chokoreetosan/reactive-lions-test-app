@@ -1,6 +1,7 @@
 import * as React from 'react';
+import {useState} from 'react';
 import styled from 'styled-components'
-
+import { Controls, PlayState, Tween } from 'react-gsap';
 interface movieData{
         Director:string,
         Genres:string,
@@ -18,6 +19,11 @@ interface PosterProps {
     movieData:movieData
     setCurrentlyShown(movieData:movieData):()=>void,
     key:string
+    pointerFunctions: {
+        setPointerX: (x:number)=>{}
+        setPointerY: (y:number)=>{},
+        setHoverVisible: (isVisible:boolean)=>{}
+    }
 }
 
 const Image = styled.img`
@@ -27,22 +33,27 @@ border-radius:5px;
 border:3px solid #A742EB;
 `;
 
-const Poster = ({key,movieData,setCurrentlyShown}:PosterProps) => {
+const Poster = ({key,movieData,setCurrentlyShown,pointerFunctions}:PosterProps) => {
+    
 
-
-    console.log(movieData)
     return <div onClick={()=>{
         console.log('poster clicked')
         setCurrentlyShown(movieData)
-    }}>
-    <Image id={key} className={'posters'} src={movieData.imageURL} 
+    }}>    
+
     
-    // onMouseEnter={()=>{
 
-    // }}
-    // onMouseLeave={()=>{
+    <Image id={key} className={'posters'} src={movieData.imageURL} 
+    onMouseEnter={()=>{
+        console.log('mouseEntered')
+        pointerFunctions.setHoverVisible(true);
+    }}
+    onMouseLeave={()=>{
+        console.log('mouseLeft')
+        pointerFunctions.setHoverVisible(false)
 
-    // }}
+    }}
+
     />
    </div> 
 }

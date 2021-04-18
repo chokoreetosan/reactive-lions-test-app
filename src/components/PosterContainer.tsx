@@ -19,10 +19,16 @@ width:100%;
 `
 
 interface PosterContainerProps  {
-  setCurrentlyShown():()=> void;
+  setCurrentlyShown():()=> void
+  pointerFunctions: {
+    setPointerX: ()=>{}
+    setPointerY: ()=>{},
+    setHoverVisible: ()=>{}
+
+}
 }
 
-const PosterContainer = ({setCurrentlyShown}:PosterContainerProps) => {
+const PosterContainer = ({setCurrentlyShown, pointerFunctions}:PosterContainerProps) => {
     const data = useStaticQuery(graphql`query MyQuery($formatString: String = "") {
         allMoviesCsv {
           nodes {
@@ -66,7 +72,7 @@ const PosterContainer = ({setCurrentlyShown}:PosterContainerProps) => {
     const [posterData, setPosterData] = useState(movies);
     const posters = posterData.map((movie, ind)=>{
         return (
-            <Poster key={ind} movieData={movie} setCurrentlyShown={setCurrentlyShown}/>
+            <Poster key={ind} movieData={movie} setCurrentlyShown={setCurrentlyShown} pointerFunctions={pointerFunctions}/>
         )
     })
     useEffect(()=>{

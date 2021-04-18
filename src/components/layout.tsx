@@ -6,13 +6,13 @@
  */
 
 import * as React from "react"
-import {ReactNode} from 'react'
+import {ReactNode,useState} from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
 import NavBar from "./NavBar"
 import styled from 'styled-components'
 import ContentContainer from "./ContentContainer"
-
+import {Tween} from 'react-gsap'
 interface LayoutProps {
   children: ReactNode
 }
@@ -27,6 +27,17 @@ const App = styled.div`
 `;
 
 const Layout = ({ children }:LayoutProps) => {
+  const [pointerX, setPointerX] = useState();
+  const [pointerY, setPointerY] = useState();
+  const [hoverIsVisible, setHoverVisible] = useState(false);
+
+  const updateMouseLocation = (e) => {
+   setPointerX(e.clientX);
+    setPointerY(e.clientY);
+
+};
+document.addEventListener('mousemove',updateMouseLocation)
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -40,7 +51,21 @@ const Layout = ({ children }:LayoutProps) => {
   return (
     <App>
       <NavBar/>
-      <ContentContainer />
+      <ContentContainer pointerFunctions={{setPointerX,setPointerY,setHoverVisible}}/>
+      <Tween to={{x:pointerX,y:pointerY}}>
+      { hoverIsVisible?
+    <div 
+style={{
+position:'absolute',
+left:pointerX, top:pointerY
+}
+}
+>content
+</div>:
+<></>}
+      </Tween>
+
+      
     </App>
   )
 }
