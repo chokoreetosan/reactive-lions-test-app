@@ -163,6 +163,47 @@ border-bottom:1px solid grey;
 padding-bottom:15px;
 `;
 
+const SummaryBox = styled.div`
+width:14vw;
+height:auto;
+margin-bottom:15px;
+`;
+
+const SummaryTitle = styled.div`
+color:grey;
+font-family:Arial,Helvetica,sans-serif;
+font-size:0.8em;
+margin-bottom:4px;
+font-weight:bold;
+`;
+const SummaryText = styled.div`
+color:black;
+font-size:0.8em;
+font-family:Arial,Helvetica,sans-serif;
+font-weight:bold;
+
+`;
+
+const LeadActorsBox = styled.div`
+width:14vw;
+height:auto;
+`;
+
+const LeadActorsTitle = styled.div`
+color:grey;
+font-family:Arial,Helvetica,sans-serif;
+font-size:0.8em;
+font-weight:bold;
+margin-bottom:4px;
+`;
+
+const LeadActorsText = styled.div`
+color:black;
+font-size:0.8em;
+font-family:Arial,Helvetica,sans-serif;
+font-weight:bold;
+`;
+
 
 const MovieData = ({currentlyShown}:MovieDataProps) => {
     return <Data id={'moviedata'}>
@@ -198,6 +239,18 @@ const MovieData = ({currentlyShown}:MovieDataProps) => {
     <DirectorTitle>Director</DirectorTitle>
     <DirectorName>{currentlyShown.Director}</DirectorName>
     </DirectorBox>
+    <SummaryBox>
+    <SummaryTitle>Summary</SummaryTitle>
+    <SummaryText>{currentlyShown.Summary}</SummaryText>
+    </SummaryBox>
+    <LeadActorsBox>
+    <LeadActorsTitle>
+    Lead Actors
+    </LeadActorsTitle>
+    <LeadActorsText>
+        {currentlyShown.Lead_Actors}
+    </LeadActorsText>
+    </LeadActorsBox>
     </Data>
 }
 
