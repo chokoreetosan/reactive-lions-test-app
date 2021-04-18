@@ -69,6 +69,9 @@ const PosterContainer = ({setCurrentlyShown}:PosterContainerProps) => {
             <Poster key={ind} movieData={movie} setCurrentlyShown={setCurrentlyShown}/>
         )
     })
+    useEffect(()=>{
+      setCurrentlyShown(posterData[0])
+    },[])
 
     return (
     <div
