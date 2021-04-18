@@ -30,6 +30,7 @@ const Layout = ({ children }:LayoutProps) => {
   const [pointerX, setPointerX] = useState();
   const [pointerY, setPointerY] = useState();
   const [hoverIsVisible, setHoverVisible] = useState(false);
+  const [reasonForReccomendation, setReasonForReccomendation] = useState("")
 
   const updateMouseLocation = (e) => {
    setPointerX(e.clientX);
@@ -47,21 +48,31 @@ document.addEventListener('mousemove',updateMouseLocation)
       }
     }
   `)
+  const HoverDiv = styled.div`
+    z-index:1000;
+    width:10vw;
+    height:auto;
+    background-color:rgba(255,182,193,0.5);
+    border:2px solid black;
+    border-radius:5px;
+  `;
+
+  
 
   return (
     <App>
       <NavBar/>
-      <ContentContainer pointerFunctions={{setPointerX,setPointerY,setHoverVisible}}/>
+      <ContentContainer pointerFunctions={{setPointerX,setPointerY,setHoverVisible,setReasonForReccomendation}}/>
       <Tween to={{x:pointerX,y:pointerY}}>
       { hoverIsVisible?
-    <div 
+    <HoverDiv 
 style={{
 position:'absolute',
 left:pointerX, top:pointerY
 }
 }
->content
-</div>:
+>Reccomended to you because {reasonForReccomendation}
+</HoverDiv>:
 <></>}
       </Tween>
 

@@ -24,7 +24,7 @@ interface PosterContainerProps  {
     setPointerX: ()=>{}
     setPointerY: ()=>{},
     setHoverVisible: ()=>{}
-
+    setReasonForReccomendation:(reason:string)=>{}
 }
 }
 

@@ -22,7 +22,8 @@ interface PosterProps {
     pointerFunctions: {
         setPointerX: (x:number)=>{}
         setPointerY: (y:number)=>{},
-        setHoverVisible: (isVisible:boolean)=>{}
+        setHoverVisible: (isVisible:boolean)=>{},
+        setReasonForReccomendation:(reason:string)=>{}
     }
 }
 
@@ -35,7 +36,15 @@ border:3px solid #A742EB;
 
 const Poster = ({key,movieData,setCurrentlyShown,pointerFunctions}:PosterProps) => {
     
-
+    const createReasonForReccomendation = () => {
+        const reasons = [
+          "you seem to like this genre.",
+          "you have watched similar things in the past.",
+          "you should try something new."
+        ]
+        return reasons[Math.floor(Math.random()*3)]
+        
+    }
     return <div onClick={()=>{
         console.log('poster clicked')
         setCurrentlyShown(movieData)
@@ -47,6 +56,7 @@ const Poster = ({key,movieData,setCurrentlyShown,pointerFunctions}:PosterProps) 
     onMouseEnter={()=>{
         console.log('mouseEntered')
         pointerFunctions.setHoverVisible(true);
+        pointerFunctions.setReasonForReccomendation(createReasonForReccomendation())
     }}
     onMouseLeave={()=>{
         console.log('mouseLeft')

@@ -18,7 +18,7 @@ interface  ContentContainerTypes {
         setPointerX: ()=>{}
         setPointerY: ()=>{},
         setHoverVisible: ()=>{}
-
+        setReasonForReccomendation:(reason:string)=>{}
     }
 }
 
