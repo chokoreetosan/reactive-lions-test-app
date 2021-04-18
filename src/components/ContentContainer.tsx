@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 import MovieData from './MovieData';
 import PosterContainer from './PosterContainer';
@@ -13,11 +14,12 @@ width:60vw;
 `;
 
 const ContentContainer = () => {
+    const [currentlyShown,setCurrentlyShown] = useState({});
 
     return <Container id={'contentcontainer'}>
         <SideNavBar/>
-        <PosterContainer />
-        <MovieData />
+        <PosterContainer setCurrentlyShown={setCurrentlyShown} />
+        <MovieData currentlyShown={currentlyShown}/>
         </Container>
 }
 
