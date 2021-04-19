@@ -11,8 +11,7 @@ import NavBar from "./NavBar"
 import styled from "styled-components"
 import ContentContainer from "./ContentContainer"
 import { Tween } from "react-gsap"
-interface LayoutProps {
-}
+interface LayoutProps {}
 
 const App = styled.div`
   width: 1960px;
@@ -21,7 +20,7 @@ const App = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  overflow:scroll;
+  overflow: scroll;
 `
 
 const HoverDiv = styled.div`
@@ -33,7 +32,7 @@ const HoverDiv = styled.div`
   border-radius: 5px;
 `
 
-const Layout = ({ }: LayoutProps) => {
+const Layout = ({}: LayoutProps) => {
   /**
    * The state variables that control the hover effect.
    * **/
@@ -55,8 +54,8 @@ const Layout = ({ }: LayoutProps) => {
     setPointerY(e.clientY)
   }
 
-  if(typeof document !== 'undefined'){
-  document.addEventListener("mousemove", updateMouseLocation)
+  if (typeof document !== "undefined") {
+    document.addEventListener("mousemove", updateMouseLocation)
   }
   return (
     <App>
