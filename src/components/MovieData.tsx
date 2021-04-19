@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 const Data = styled.div`
-  width: 15vw;
+  width: 15%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
   display: flex;
@@ -26,14 +26,14 @@ interface MovieDataProps {
 }
 
 const GraphicsBox = styled.div`
-  height: 18vh;
+  height: 18%;
   width: 100%;
   position: relative;
 `
 
 const ThumbNail = styled.img`
-  width: 14vw;
-  height: 14vh;
+  width: 90%;
+  height: 80%;
   margin-top: 25px;
   position: absolute;
   top: 0;
@@ -55,7 +55,7 @@ const Title = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 10px;
-  width: 14vw;
+  width: 100%;
   height: auto;
   left: 0;
 `
@@ -63,13 +63,13 @@ const Genres = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   color: grey;
   font-size: 0.8em;
-  width: 14vw;
+  width: 100%;
   heigth: 1vh;
   left: 0;
 `
 
 const ButtonContainer = styled.div`
-  width: 14vw;
+  width: 100%;
   height: 5vh;
   display: flex;
   flex-direction: row;
@@ -98,7 +98,7 @@ const AddButton = styled.button`
   height: 3vh;
 `
 const RatingAndYear = styled.div`
-  width: 14vw;
+  width: 100%;
   height: 5vh;
   display: flex;
   flex-direction: row;
@@ -122,7 +122,7 @@ const RatingAndYearTitle = styled.div`
 `
 
 const Rating = styled.div`
-  width: 7vw;
+  width: 50%;
   height: 7vh;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8em;
@@ -130,7 +130,7 @@ const Rating = styled.div`
 `
 
 const Year = styled.div`
-  width: 7vw;
+  width: 50%;
   height: 7vh;
   font-size: 0.8em;
   font-family: Arial, Helvetica, sans-serif;
@@ -138,7 +138,7 @@ const Year = styled.div`
 `
 
 const DirectorBox = styled.div`
-  width: 14vw;
+  width: 100%;
   height: 7vh;
 `
 
@@ -160,7 +160,7 @@ const DirectorName = styled.div`
 `
 
 const SummaryBox = styled.div`
-  width: 14vw;
+  width: 100%;
   height: auto;
   margin-bottom: 15px;
 `
@@ -180,7 +180,7 @@ const SummaryText = styled.div`
 `
 
 const LeadActorsBox = styled.div`
-  width: 14vw;
+  width: 100%;
   height: auto;
 `
 

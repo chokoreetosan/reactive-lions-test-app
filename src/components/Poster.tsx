@@ -28,7 +28,7 @@ interface PosterProps {
 }
 
 const Image = styled.img`
-  width: 15vh;
+  width: 8rem;
   height: auto;
   border-radius: 5px;
   border: 3px solid #a742eb;

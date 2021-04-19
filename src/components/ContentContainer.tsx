@@ -9,8 +9,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  height: 70vh;
-  width: 60vw;
+  height: 90%;
+  width: 100%;
 `
 
 interface ContentContainerTypes {

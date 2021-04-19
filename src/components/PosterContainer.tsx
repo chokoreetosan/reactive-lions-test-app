@@ -5,8 +5,8 @@ import styled from "styled-components"
 
 import Poster from "./Poster"
 const Container = styled.div`
-  width: 40vw;
-  height: 60vh;
+  width: 60%;
+  height: 60%;
 
   display: grid;
   grid-template-columns: 10vw 10vw 10vw 10vw;

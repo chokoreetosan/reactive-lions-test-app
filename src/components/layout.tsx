@@ -12,16 +12,16 @@ import styled from "styled-components"
 import ContentContainer from "./ContentContainer"
 import { Tween } from "react-gsap"
 interface LayoutProps {
-  children: ReactNode
 }
 
 const App = styled.div`
-  width: 60vw;
-  height: 80vh;
+  width: 1960px;
+  height: 1080px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   position: fixed;
+  overflow:scroll;
 `
 
 const HoverDiv = styled.div`
@@ -33,7 +33,7 @@ const HoverDiv = styled.div`
   border-radius: 5px;
 `
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ }: LayoutProps) => {
   /**
    * The state variables that control the hover effect.
    * **/

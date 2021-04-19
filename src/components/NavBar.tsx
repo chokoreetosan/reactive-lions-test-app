@@ -4,8 +4,8 @@ import styled from "styled-components"
 import icon from "../images/gatsby-icon.png"
 const Bar = styled.div`
   margin: 0 auto;
-  width: 60vw;
-  height: 10vh;
+  width: 100%;
+  height: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;

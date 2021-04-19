@@ -5,7 +5,7 @@ const Bar = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  width: 5vw;
+  width: 10%;
   height: 100%;
   margin-top: 20px;
 `
