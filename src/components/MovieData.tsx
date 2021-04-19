@@ -43,7 +43,7 @@ const ThumbNail = styled.img`
 `
 
 const Poster = styled.img`
-  width: 4vw;
+  width: 30%;
   height: auto;
   position: absolute;
   bottom: 0;
