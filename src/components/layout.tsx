@@ -54,8 +54,10 @@ const Layout = ({ }: LayoutProps) => {
     setPointerX(e.clientX)
     setPointerY(e.clientY)
   }
-  document.addEventListener("mousemove", updateMouseLocation)
 
+  if(typeof document !== 'undefined'){
+  document.addEventListener("mousemove", updateMouseLocation)
+  }
   return (
     <App>
       <NavBar />
