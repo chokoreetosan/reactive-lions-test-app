@@ -10,7 +10,8 @@ play button queries a microservice, and pulls up a video stream
 
 possible elastic transcoder integration
 
-To run the app, clone the repository.
+To run the app, clone the repository. Be sure to install gatsby-cli.
+
 Contact the creator for some test data.
 
 ```
