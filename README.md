@@ -1,5 +1,7 @@
 This is a prototype of a video player app. 
 
+Here's a link to the deployment. https://8-hour-challenge.vercel.app/
+
 My next goals for this project are as follows:
 
 mobile experience
