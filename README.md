@@ -1,4 +1,6 @@
-This is a prototype of a video player app. 
+This is a prototype of a video player app. The design of this app is inspired by this design
+
+![App Design](https://github.com/chokoreetosan/video-player/blob/master/design.png)
 
 Here's a link to the deployment. https://8-hour-challenge.vercel.app/
 
